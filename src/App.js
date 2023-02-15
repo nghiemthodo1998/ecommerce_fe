@@ -1,28 +1,30 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import CartPage from "./pages/CartPage";
-import HomePage from "./pages/HomePage";
-import ProductListPage from "./pages/ProductListPage";
-import ProductDetailsPage from "./pages/ProductDetailsPage";
-import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
-import UserProfilePage from "./pages/user/UserProfilePage";
-import UserOrdersPage from "./pages/user/UserOrdersPage";
-import UserCartDetailsPage from "./pages/user/UserCartDetailsPage";
-import UserOrderDetailsPage from "./pages/user/UserOrderDetailsPage";
-import ProtectedRoutesComponent from "./routes/ProtectedRoutesComponent";
-import AdminAnalyticsPage from "./pages/admin/AdminAnalyticsPage";
-import AdminChatsPage from "./pages/admin/AdminChatsPage";
-import AdminCreateProductPage from "./pages/admin/AdminCreateProductPage";
-import AdminEditProductPage from "./pages/admin/AdminEditProductPage";
-import AdminEditUserPage from "./pages/admin/AdminEditUserPage";
-import AdminOrderDetailsPage from "./pages/admin/AdminOrderDetailsPage";
-import AdminOrdersPage from "./pages/admin/AdminOrdersPage";
-import AdminProductsPage from "./pages/admin/AdminProductsPage";
-import AdminUsersPage from "./pages/admin/AdminUsersPage";
-import HeaderComponent from "./components/HeaderComponent/index";
-import FooterComponent from "./components/FooterComponent/index";
-import RouteWithUserChatComponent from "./routes/RouteWithUserChatComponent";
+
+import RouteWithUserChat from "./routes/RouteWithUserChat";
+import ProtectedRoutes from "./routes/ProtectedRoutes";
+
+import HeaderComponent from "./components/Header";
+import FooterComponent from "./components/Footer";
+import HomeLayout from "./pages/Home";
+import ProductListLayout from "./pages/ProductList";
+import ProductDetailsLayout from "./pages/ProductDetails";
+import CartLayout from "./pages/Cart";
+import RegisterLayout from "./pages/Register";
+import LoginLayout from "./pages/Login";
+import UserProfileLayout from "./pages/user/UserProfile";
+import UserOrdersLayout from "./pages/user/UserOrders";
+import UserCartDetailsLayout from "./pages/user/UserCartDetails";
+import UserOrderDetailsLayout from "./pages/user/UserOrderDetails";
+import AdminUsersLayout from "./pages/admin/AdminUsers";
+import AdminEditUserLayout from "./pages/admin/AdminEditUser";
+import AdminProductsLayout from "./pages/admin/AdminProducts";
+import AdminCreateProductLayout from "./pages/admin/AdminCreateProduct";
+import AdminEditProductLayout from "./pages/admin/AdminEditProduct";
+import AdminOrdersLayout from "./pages/admin/AdminOrders";
+import AdminOrderDetailsLayout from "./pages/admin/AdminOrderDetails";
+import AdminChatsLayout from "./pages/admin/AdminChats";
+import AdminAnalyticsLayout from "./pages/admin/AdminAnalytics";
 
 function App() {
   //11
@@ -30,45 +32,51 @@ function App() {
     <>
       <HeaderComponent />
       <Routes>
-        <Route element={<RouteWithUserChatComponent />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/product-list" element={<ProductListPage />} />
-          <Route path="/product-details/:id" element={<ProductDetailsPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+        <Route element={<RouteWithUserChat />}>
+          <Route path="/" element={<HomeLayout />} />
+          <Route path="/product-list" element={<ProductListLayout />} />
+          <Route
+            path="/product-details/:id"
+            element={<ProductDetailsLayout />}
+          />
+          <Route path="/cart" element={<CartLayout />} />
+          <Route path="/login" element={<LoginLayout />} />
+          <Route path="/register" element={<RegisterLayout />} />
           <Route path="*" element={"Page not exists 404"} />
         </Route>
 
-        <Route element={<ProtectedRoutesComponent admin={false} />}>
-          <Route path="/user" element={<UserProfilePage />} />
-          <Route path="/user/my-orders" element={<UserOrdersPage />} />
-          <Route path="/user/cart-details" element={<UserCartDetailsPage />} />
+        <Route element={<ProtectedRoutes admin={false} />}>
+          <Route path="/user" element={<UserProfileLayout />} />
+          <Route path="/user/my-orders" element={<UserOrdersLayout />} />
+          <Route
+            path="/user/cart-details"
+            element={<UserCartDetailsLayout />}
+          />
           <Route
             path="/user/order-details"
-            element={<UserOrderDetailsPage />}
+            element={<UserOrderDetailsLayout />}
           />
         </Route>
 
-        <Route element={<ProtectedRoutesComponent admin={true} />}>
-          <Route path="/admin/users" element={<AdminUsersPage />} />
-          <Route path="/admin/edit-user" element={<AdminEditUserPage />} />
-          <Route path="/admin/products" element={<AdminProductsPage />} />
+        <Route element={<ProtectedRoutes admin={true} />}>
+          <Route path="/admin/users" element={<AdminUsersLayout />} />
+          <Route path="/admin/edit-user" element={<AdminEditUserLayout />} />
+          <Route path="/admin/products" element={<AdminProductsLayout />} />
           <Route
             path="/admin/create-new-product"
-            element={<AdminCreateProductPage />}
+            element={<AdminCreateProductLayout />}
           />
           <Route
             path="/admin/edit-product"
-            element={<AdminEditProductPage />}
+            element={<AdminEditProductLayout />}
           />
-          <Route path="/admin/orders" element={<AdminOrdersPage />} />
+          <Route path="/admin/orders" element={<AdminOrdersLayout />} />
           <Route
             path="/admin/order-details"
-            element={<AdminOrderDetailsPage />}
+            element={<AdminOrderDetailsLayout />}
           />
-          <Route path="/admin/chats" element={<AdminChatsPage />} />
-          <Route path="/admin/analytics" element={<AdminAnalyticsPage />} />
+          <Route path="/admin/chats" element={<AdminChatsLayout />} />
+          <Route path="/admin/analytics" element={<AdminAnalyticsLayout />} />
         </Route>
       </Routes>
       <FooterComponent />
