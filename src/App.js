@@ -25,20 +25,19 @@ import AdminOrdersLayout from "./pages/admin/AdminOrders";
 import AdminOrderDetailsLayout from "./pages/admin/AdminOrderDetails";
 import AdminChatsLayout from "./pages/admin/AdminChats";
 import AdminAnalyticsLayout from "./pages/admin/AdminAnalytics";
+import { ScrollToTop } from "./utils/ScrollToTop";
 
 function App() {
-  //11
+  //35
   return (
     <>
+      <ScrollToTop />
       <HeaderComponent />
       <Routes>
         <Route element={<RouteWithUserChat />}>
           <Route path="/" element={<HomeLayout />} />
           <Route path="/product-list" element={<ProductListLayout />} />
-          <Route
-            path="/product-details/:id"
-            element={<ProductDetailsLayout />}
-          />
+          <Route path="/product-details" element={<ProductDetailsLayout />} />
           <Route path="/cart" element={<CartLayout />} />
           <Route path="/login" element={<LoginLayout />} />
           <Route path="/register" element={<RegisterLayout />} />

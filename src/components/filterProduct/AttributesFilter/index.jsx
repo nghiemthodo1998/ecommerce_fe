@@ -10,6 +10,7 @@ const AttributesFilterComponent = () => {
             <Form.Label>{Object.keys(item)}</Form.Label>
             {item[Object.keys(item)].map((i, index) => (
               <Form.Check
+                key={index}
                 type="checkbox"
                 label={i}
                 id="disabled-custom-switch"

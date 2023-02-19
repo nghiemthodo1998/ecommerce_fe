@@ -37,7 +37,12 @@ const ProductListLayout = () => {
           </ListGroup>
         </Col>
         <Col md={9}>
-          <ProductForListComponent />
+          {Array.from({ length: 5 }).map((_, index) => (
+            <ProductForListComponent
+              key={index}
+              images={["games", "monitors", "tablets"]} //them link anh vao cac phan tu cua array
+            />
+          ))}
           <PaginationComponent />
         </Col>
       </Row>
