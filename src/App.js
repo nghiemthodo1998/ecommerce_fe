@@ -28,7 +28,7 @@ import AdminAnalyticsLayout from "./pages/admin/AdminAnalytics";
 import { ScrollToTop } from "./utils/ScrollToTop";
 
 function App() {
-  //35
+  //36
   return (
     <>
       <ScrollToTop />
