@@ -14,12 +14,18 @@ import AddToCartMessage from "../../components/AddToCartMessage";
 import ImageZoom from "js-image-zoom";
 import { defaultImg } from "../../constants";
 
+const options1 = {
+  width: 400,
+  zoomWidth: 500,
+  offset: { vertical: 0, horizontal: 10 },
+};
+
 const ProductDetailsLayout = () => {
   useEffect(() => {
-    new ImageZoom(document.getElementById("first"), {});
-    new ImageZoom(document.getElementById("second"), {});
-    new ImageZoom(document.getElementById("third"), {});
-    new ImageZoom(document.getElementById("fourth"), {});
+    new ImageZoom(document.getElementById("first"), options1);
+    new ImageZoom(document.getElementById("second"), options1);
+    new ImageZoom(document.getElementById("third"), options1);
+    new ImageZoom(document.getElementById("fourth"), options1);
   });
 
   return (
