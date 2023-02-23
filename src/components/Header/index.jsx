@@ -13,11 +13,12 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
+import { ENDPOINT, ADMIN_ENDPOINT, USER_ENDPOINT } from "../../constants";
 const HeaderComponent = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <LinkContainer to="/">
+        <LinkContainer to={ENDPOINT.HOME}>
           <Navbar.Brand>ECOMMERCE SHOP</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -36,7 +37,7 @@ const HeaderComponent = () => {
             </InputGroup>
           </Nav>
           <Nav>
-            <LinkContainer to="/admin/orders">
+            <LinkContainer to={ADMIN_ENDPOINT.ORDERS}>
               <Nav.Link>
                 Admin
                 <span className="position-absolute top-1 start-10 translate-middle p-2 bg-danger border border-light rounded-circle"></span>
@@ -47,22 +48,26 @@ const HeaderComponent = () => {
               <NavDropdown.Item
                 eventKey="/user/my-orders"
                 as={Link}
-                to="/user/my-orders"
+                to={USER_ENDPOINT.ORDERS}
               >
                 My orders
               </NavDropdown.Item>
-              <NavDropdown.Item eventKey="/user" as={Link} to="/user">
+              <NavDropdown.Item
+                eventKey="/user"
+                as={Link}
+                to={USER_ENDPOINT.USER}
+              >
                 My profile
               </NavDropdown.Item>
               <NavDropdown.Item>Logout</NavDropdown.Item>
             </NavDropdown>
-            <LinkContainer to="/login">
+            <LinkContainer to={ENDPOINT.LOGIN}>
               <Nav.Link>Login</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/register">
+            <LinkContainer to={ENDPOINT.REGISTER}>
               <Nav.Link>Register</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/cart">
+            <LinkContainer to={ENDPOINT.CART}>
               <Nav.Link>
                 <Badge pill bg="danger">
                   2

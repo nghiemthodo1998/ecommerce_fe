@@ -13,6 +13,7 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { registerSchema } from "./valitation";
+import { ENDPOINT } from "../../constants";
 
 const RegisterLayout = () => {
   return (
@@ -108,7 +109,7 @@ const RegisterLayout = () => {
                   <Row className="pb-2">
                     <Col>
                       Do you have an account already?{" "}
-                      <Link to="/login">Login</Link>
+                      <Link to={ENDPOINT.LOGIN}>Login</Link>
                     </Col>
                   </Row>
                   <Button type="submit">

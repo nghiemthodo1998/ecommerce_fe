@@ -12,6 +12,7 @@ import {
 import { Rating } from "react-simple-star-rating";
 import AddToCartMessage from "../../components/AddToCartMessage";
 import ImageZoom from "js-image-zoom";
+import { defaultImg } from "../../constants";
 
 const ProductDetailsLayout = () => {
   useEffect(() => {
@@ -27,31 +28,19 @@ const ProductDetailsLayout = () => {
       <Row className="mt-5">
         <Col md={4}>
           <div style={{ zIndex: 1 }} id="first">
-            <Image
-              fluid
-              src="https://cdn.tgdd.vn/Files/2019/07/25/1181734/do-sau-truong-anh-la-gi-cach-thiet-lap-de-chup-anh-dep-nhat--1.jpg"
-            />
+            <Image fluid src={defaultImg} />
           </div>
           <br />
           <div style={{ zIndex: 1 }} id="second">
-            <Image
-              fluid
-              src="https://cdn.tgdd.vn/Files/2019/07/25/1181734/do-sau-truong-anh-la-gi-cach-thiet-lap-de-chup-anh-dep-nhat--1.jpg"
-            />
+            <Image fluid src={defaultImg} />
           </div>
           <br />
           <div style={{ zIndex: 1 }} id="third">
-            <Image
-              fluid
-              src="https://cdn.tgdd.vn/Files/2019/07/25/1181734/do-sau-truong-anh-la-gi-cach-thiet-lap-de-chup-anh-dep-nhat--1.jpg"
-            />
+            <Image fluid src={defaultImg} />
           </div>
           <br />
           <div style={{ zIndex: 1 }} id="fourth">
-            <Image
-              fluid
-              src="https://cdn.tgdd.vn/Files/2019/07/25/1181734/do-sau-truong-anh-la-gi-cach-thiet-lap-de-chup-anh-dep-nhat--1.jpg"
-            />
+            <Image fluid src={defaultImg} />
           </div>
           <br />
         </Col>

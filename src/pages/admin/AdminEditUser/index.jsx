@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { defaultImg } from "../../../constants";
+import { ADMIN_ENDPOINT } from "../../../constants";
 
 const AdminEditUserLayout = () => {
   const [validated, setValidated] = useState(false);
@@ -17,7 +17,7 @@ const AdminEditUserLayout = () => {
     <Container>
       <Row className="justify-content-md-center mt-5">
         <Col md={1}>
-          <Link to="/admin/users" className="btn btn-info my-3">
+          <Link to={ADMIN_ENDPOINT.USERS} className="btn btn-info my-3">
             Go back
           </Link>
         </Col>

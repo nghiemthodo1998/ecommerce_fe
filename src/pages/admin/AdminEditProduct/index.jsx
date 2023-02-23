@@ -11,7 +11,7 @@ import {
   Table,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { defaultImg } from "../../../constants";
+import { ADMIN_ENDPOINT, defaultImg } from "../../../constants";
 
 const onHover = {
   cursor: "pointer",
@@ -35,7 +35,7 @@ const AdminEditProductLayout = () => {
     <Container>
       <Row className="justify-content-md-center mt-5">
         <Col md={1}>
-          <Link to="/admin/products" className="btn btn-info my-3">
+          <Link to={ADMIN_ENDPOINT.PRODUCTS} className="btn btn-info my-3">
             Go back
           </Link>
         </Col>

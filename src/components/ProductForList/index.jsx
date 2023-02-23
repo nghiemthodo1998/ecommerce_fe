@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { Rating } from "react-simple-star-rating";
+import { ENDPOINT } from "../../constants";
 
 const ProductForListComponent = ({ images }) => {
   return (
@@ -22,7 +23,7 @@ const ProductForListComponent = ({ images }) => {
             </Card.Text>
             <Card.Text className="h4">
               $124
-              <LinkContainer to="/product-details">
+              <LinkContainer to={ENDPOINT.PRODUCT_DETAILS}>
                 <Button variant="danger">See product</Button>
               </LinkContainer>
             </Card.Text>

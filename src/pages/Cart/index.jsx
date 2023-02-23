@@ -2,6 +2,7 @@ import React from "react";
 import { Alert, Button, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import CartItem from "../../components/CartItem";
+import { USER_ENDPOINT } from "../../constants";
 
 const CartLayout = () => {
   return (
@@ -27,7 +28,7 @@ const CartLayout = () => {
               Price: <span className="fw-bold">$892</span>
             </ListGroup.Item>
             <ListGroup.Item>
-              <LinkContainer to="/user/cart-details">
+              <LinkContainer to={USER_ENDPOINT.CART_DETAILS}>
                 <Button type="button">Proceed To Checkout</Button>
               </LinkContainer>
             </ListGroup.Item>

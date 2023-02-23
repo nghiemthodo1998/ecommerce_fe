@@ -1,17 +1,16 @@
 import { Formik } from "formik";
-import * as yup from "yup";
-import React, { useState } from "react";
+import React from "react";
 import {
   Alert,
   Button,
   Col,
   Container,
   Form,
-  InputGroup,
   Row,
   Spinner,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { ENDPOINT } from "../../constants";
 import { loginSchema } from "./valitation";
 
 const LoginLayout = () => {
@@ -28,7 +27,7 @@ const LoginLayout = () => {
               password: "",
             }}
           >
-            {({ handleSubmit, handleChange, handleBlur, values, errors }) => {
+            {({ handleSubmit, handleChange, values }) => {
               return (
                 <Form noValidate onSubmit={handleSubmit}>
                   <Form.Group className="mb-3" controlId="validationFormik01">
@@ -38,12 +37,8 @@ const LoginLayout = () => {
                       name="email"
                       value={values.email}
                       onChange={handleChange}
-                      // isInvalid={!!errors.email}
                       placeholder="Enter your email"
                     />
-                    {/* <Form.Control.Feedback type="invalid">
-                      {errors.email}
-                    </Form.Control.Feedback> */}
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="validationFormik04">
                     <Form.Label>Password</Form.Label>
@@ -53,11 +48,7 @@ const LoginLayout = () => {
                       name="password"
                       value={values.password}
                       onChange={handleChange}
-                      // isInvalid={!!errors.password}
                     />
-                    {/* <Form.Control.Feedback type="invalid">
-                      {errors.password}
-                    </Form.Control.Feedback> */}
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check
@@ -69,7 +60,7 @@ const LoginLayout = () => {
                   <Row className="pb-2">
                     <Col>
                       Don't you have an account?{" "}
-                      <Link to="/register">Register</Link>
+                      <Link to={ENDPOINT.REGISTER}>Register</Link>
                     </Col>
                   </Row>
                   <Button variant="primary" type="submit">

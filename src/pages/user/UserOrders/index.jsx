@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { USER_ENDPOINT } from "../../../constants";
 
 const UserOrdersLayout = () => {
   return (
@@ -30,7 +31,7 @@ const UserOrdersLayout = () => {
                     <i className={item}></i>
                   </td>
                   <td>
-                    <Link to="/user/order-details">go to order</Link>
+                    <Link to={USER_ENDPOINT.ORDER_DETAILS}>go to order</Link>
                   </td>
                 </tr>
               )

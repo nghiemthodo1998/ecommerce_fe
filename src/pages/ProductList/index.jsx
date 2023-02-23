@@ -7,6 +7,7 @@ import CategoryFilterComponent from "../../components/filterProduct/CategoryFilt
 import AttributesFilterComponent from "../../components/filterProduct/AttributesFilter";
 import ProductForListComponent from "../../components/ProductForList";
 import PaginationComponent from "../../components/Pagination";
+import { defaultImg } from "../../constants";
 
 const ProductListLayout = () => {
   return (
@@ -40,7 +41,7 @@ const ProductListLayout = () => {
           {Array.from({ length: 5 }).map((_, index) => (
             <ProductForListComponent
               key={index}
-              images={["games", "monitors", "tablets"]} //them link anh vao cac phan tu cua array
+              images={[defaultImg]} //them link anh vao cac phan tu cua array
             />
           ))}
           <PaginationComponent />

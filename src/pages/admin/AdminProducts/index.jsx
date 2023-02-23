@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button, Col, Row, Table } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import { Link } from "react-router-dom";
 import AdminLinks from "../../../components/admin/AdminLinks";
 import ModalConfirm from "../../../components/ModalConfirm";
+import { ADMIN_ENDPOINT } from "../../../constants";
 
 const AdminProductsLayout = () => {
   const [showModalConfirm, setShowModalConfirm] = useState(false);
@@ -20,7 +20,7 @@ const AdminProductsLayout = () => {
       <Col md={10}>
         <h1>
           Product list{" "}
-          <LinkContainer to="/admin/create-new-product">
+          <LinkContainer to={ADMIN_ENDPOINT.CREATE_PRODUCT}>
             <Button variant="primary" size="lg">
               Create new
             </Button>
@@ -48,7 +48,7 @@ const AdminProductsLayout = () => {
                 <td>{item.price}</td>
                 <td>{item.category}</td>
                 <td>
-                  <LinkContainer to={"/admin/edit-product"}>
+                  <LinkContainer to={ADMIN_ENDPOINT.EDIT_PRODUCT}>
                     <Button className="btn-sm">
                       <i className="bi bi-pencil-square"></i>
                     </Button>

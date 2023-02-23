@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Col, Row, Table } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import AdminLinks from "../../../components/admin/AdminLinks";
+import { ADMIN_ENDPOINT } from "../../../constants";
 
 const AdminUsersLayout = () => {
   const handleDelete = () => {
@@ -37,7 +38,7 @@ const AdminUsersLayout = () => {
                     <i className={item}></i>
                   </td>
                   <td>
-                    <LinkContainer to="/admin/edit-user">
+                    <LinkContainer to={ADMIN_ENDPOINT.EDIT_USER}>
                       <Button className="btn-sm">
                         <i className="bi bi-pencil-square"></i>
                       </Button>
