@@ -8,7 +8,7 @@ const ProductForListComponent = ({ images }) => {
     <Card style={{ marginTop: "30px", marginBottom: "50px" }}>
       <Row>
         <Col lg={5}>
-          <Card.Img variant="top" src={images} />
+          <Card.Img crossOrigin="anonymous" variant="top" src={images} />
         </Col>
         <Col lg={7}>
           <Card.Body>

@@ -7,7 +7,7 @@ const CarouselComponent = () => {
     <Carousel>
       <Carousel.Item>
         <img
-          // crossOrigin="anonymous"
+          crossOrigin="anonymous"
           className="d-block w-100"
           style={{ height: "300px", objectFit: "cover" }}
           src="https://img5.thuthuatphanmem.vn/uploads/2022/01/10/anh-bia-zalo-canh-dep-thien-nhien_024637306.jpg"

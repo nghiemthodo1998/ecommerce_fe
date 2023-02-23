@@ -12,7 +12,7 @@ const CategoryCardComponent = ({ category, index }) => {
   ];
   return (
     <Card>
-      <Card.Img variant="top" src={images[index]} />
+      <Card.Img crossOrigin="anonymous" variant="top" src={images[index]} />
       <Card.Body>
         <Card.Title>{category}</Card.Title>
         <Card.Text>
