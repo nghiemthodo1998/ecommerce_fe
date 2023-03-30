@@ -3,6 +3,7 @@ import { Alert, Button, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import CartItem from "../../components/CartItem";
 import { USER_ENDPOINT } from "../../constants";
+import { defaultImg } from "../../constants";
 
 const CartLayout = () => {
   return (
@@ -11,9 +12,18 @@ const CartLayout = () => {
         <Col md={8}>
           <h1>Shopping Cart</h1>
           <ListGroup variant="flush">
-            {Array.from({ length: 3 }).map((_, index) => (
+            {Array.from({ length: 3 }).map((item, index) => (
               <div key={index}>
-                <CartItem key={index} /> <br />
+                <CartItem
+                  item={{
+                    image: { path: defaultImg },
+                    name: "Product name",
+                    price: 10,
+                    count: 10,
+                    quantity: 10,
+                  }}
+                  key={index}
+                />
               </div>
             ))}
           </ListGroup>

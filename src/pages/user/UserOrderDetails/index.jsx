@@ -9,6 +9,7 @@ import {
   Row,
 } from "react-bootstrap";
 import CartItem from "../../../components/CartItem";
+import { defaultImg } from "../../../constants";
 
 const UserOrderDetailsLayout = () => {
   return (
@@ -50,7 +51,16 @@ const UserOrderDetailsLayout = () => {
           <h2>Order items</h2>
           <ListGroup>
             {Array.from({ length: 3 }).map((item, index) => (
-              <CartItem key={index} />
+              <CartItem
+                item={{
+                  image: { path: defaultImg },
+                  name: "Product name",
+                  price: 10,
+                  count: 10,
+                  quantity: 10,
+                }}
+                key={index}
+              />
             ))}
           </ListGroup>
         </Col>

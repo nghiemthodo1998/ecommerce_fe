@@ -74,7 +74,7 @@ const MainRoute = () => {
         />
         <Route path={ADMIN_ENDPOINT.ORDERS} element={<AdminOrdersLayout />} />
         <Route
-          path={ADMIN_ENDPOINT.ORDER_DETAILS}
+          path={`${ADMIN_ENDPOINT.ORDER_DETAILS}/:id`}
           element={<AdminOrderDetailsLayout />}
         />
         <Route path={ADMIN_ENDPOINT.CHATS} element={<AdminChatsLayout />} />

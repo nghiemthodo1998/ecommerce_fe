@@ -7,8 +7,9 @@ import {
   ListGroupItem,
   Row,
 } from "react-bootstrap";
+import { defaultImg } from "../../constants";
 
-const CartItem = () => {
+const CartItem = ({ item, orderCreated = false }) => {
   return (
     <>
       <ListGroupItem>
@@ -17,21 +18,24 @@ const CartItem = () => {
             <Image
               crossOrigin="anonymous"
               fluid
-              src="https://cdn.tgdd.vn/Files/2019/07/25/1181734/do-sau-truong-anh-la-gi-cach-thiet-lap-de-chup-anh-dep-nhat--1.jpg"
+              src={item.image ? item.image.path : defaultImg}
             />
           </Col>
+          <Col md={2}>{item.name}</Col>
           <Col md={2}>
-            Nghiem Tho <br />
-            Do
-          </Col>
-          <Col md={2}>
-            <b>$89</b>
+            <b>${item.price}</b>
           </Col>
           <Col md={3}>
-            <FormSelect>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
+            <FormSelect
+              onChange={() => {}}
+              disabled={orderCreated}
+              value={item.quantity}
+            >
+              {[...Array(item.count).keys()].map((x) => (
+                <option key={x + 1} value={x + 1}>
+                  {x + 1}
+                </option>
+              ))}
             </FormSelect>
           </Col>
           <Col md={3}>
