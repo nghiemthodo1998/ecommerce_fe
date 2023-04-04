@@ -6,12 +6,12 @@ import MainRoute from "./routes";
 
 function App() {
   return (
-    <>
+    <React.Fragment>
       <ScrollToTop />
       <HeaderComponent />
       <MainRoute />
       <FooterComponent />
-    </>
+    </React.Fragment>
   );
 }
 
